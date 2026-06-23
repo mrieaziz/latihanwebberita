@@ -1,0 +1,115 @@
+/* ==========================================================================
+   MindVibe.co.id V2 - Modern Clean Tech Master Stylesheet
+   ========================================================================== */
+
+:root {
+    --tech-primary: #4f46e5;   /* Indigo / Ungu Kebiruan Modern */
+    --tech-secondary: #0ea5e9; /* Electric Blue */
+    --tech-dark: #0f172a;      /* Slate Dark */
+    --tech-body: #f8fafc;      /* Background Abu Lembut */
+    --tech-border: #f1f5f9;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--tech-body);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #334155;
+    -webkit-font-smoothing: antialiased;
+}
+
+main { flex: 1; }
+
+/* Kustomisasi Navbar */
+.navbar-clean {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+.navbar-clean .navbar-brand { color: var(--tech-dark) !important; font-weight: 800; }
+.navbar-clean .nav-link { color: #64748b !important; font-weight: 500; }
+.navbar-clean .nav-link:hover { color: var(--tech-primary) !important; }
+
+/* Hero Section Minimalis */
+.hero-clean {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    position: relative;
+}
+
+/* Pola Grid Card Menawan */
+.tech-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tech-card:hover {
+    border-color: var(--tech-primary);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+}
+
+/* Tombol / Buttons */
+.btn-tech-primary {
+    background: linear-gradient(135deg, var(--tech-primary) 0%, #3730a3 100%);
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    transition: opacity 0.2s ease;
+}
+.btn-tech-primary:hover { color: #ffffff; opacity: 0.9; }
+
+.btn-tech-secondary {
+    background-color: #ffffff;
+    color: #334155;
+    font-weight: 500;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 12px 24px;
+}
+.btn-tech-secondary:hover { background-color: var(--tech-body); }
+
+/* Dashboard Admin Panel Style */
+.admin-sidebar-v2 {
+    background-color: #ffffff;
+    border-right: 1px solid #e2e8f0;
+}
+
+.admin-link-v2 {
+    color: #64748b;
+    font-weight: 500;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.admin-link-v2:hover, .admin-link-v2.active {
+    background-color: #eef2ff;
+    color: var(--tech-primary) !important;
+}
+
+.metric-card-v2 {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+}
+
+/* Page Login */
+.body-login-v2 {
+    background-color: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
