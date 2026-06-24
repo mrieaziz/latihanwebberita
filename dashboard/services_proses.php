@@ -4,12 +4,17 @@ include '../config/koneksi.php';
 if(isset($_POST['insert_svc'])){
     $n = mysqli_real_escape_string($koneksi, $_POST['nama']);
     $d = mysqli_real_escape_string($koneksi, $_POST['deskripsi']);
-    mysqli_query($koneksi, "INSERT INTO services (nama_layanan,deskripsi) VALUES ('$n','$d')");
-    header("Location: services_proses.php"); exit;
+
+    mysqli_query($koneksi,
+        "INSERT INTO services (nama_layanan, deskripsi)
+         VALUES ('$n','$d')");
+
+    header("Location: services.php");
+    exit;
 }
 if(isset($_GET['delete'])){
     $id = $_GET['delete']; mysqli_query($koneksi, "DELETE FROM services WHERE id='$id'");
-    header("Location: services_proses.php"); exit;
+    header("Location: dashboard/services.php"); exit;
 }
 $res = mysqli_query($koneksi, "SELECT * FROM services ORDER BY id DESC");
 ?>
@@ -28,7 +33,7 @@ $res = mysqli_query($koneksi, "SELECT * FROM services ORDER BY id DESC");
             <thead class="table-light"><tr><th>Nama Layanan</th><th>Deskripsi Fungsi</th><th>Opsi</th></tr></thead>
             <tbody>
                 <?php while($r=mysqli_fetch_assoc($res)): ?>
-                <tr><td><strong><?= $r['nama_layanan']; ?></strong></td><td class="small text-muted"><?= $r['deskripsi']; ?></td><td><a href="services_proses.php?delete=<?= $r['id']; ?>" class="btn btn-danger btn-sm rounded-3" onclick="return confirm('Hapus?')">Hapus</a></td></tr>
+                <tr><td><strong><?= $r['nama_layanan']; ?></strong></td><td class="small text-muted"><?= $r['deskripsi']; ?></td><td><a href="services.php?delete=<?= $r['id']; ?>" class="btn btn-danger btn-sm rounded-3" onclick="return confirm('Hapus?')">Hapus</a></td></tr>
                 <?php endwhile; ?>
             </tbody>
         </table>
